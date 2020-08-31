@@ -25,6 +25,14 @@ public class Test {
 		// outputs false
 		System.out.println(l.isEmpty());
 
+		// will delete first item if index is less or equal 0
+		l.deleteAtIndex(-1);
+		
+		// will delete first item if index is more or equal to size of list
+		l.deleteAtIndex(100);
+
+		// outputs { 5, 4, 1, 2 }
+		l.printList();
 
 	}
 
