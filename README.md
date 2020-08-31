@@ -1,3 +1,3 @@
 # Data Structures written in Java
 ## Includes
-  Linked List
+  Doubly Linked List
