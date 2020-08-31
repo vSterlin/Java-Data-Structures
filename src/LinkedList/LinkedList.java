@@ -1,8 +1,8 @@
 package LinkedList;
 
-public class LinkedList {
-  private Node head;
-  private Node tail;
+public class LinkedList<E> {
+  private Node<E> head;
+  private Node<E> tail;
   private int size = 0;
   
   
@@ -17,18 +17,18 @@ public class LinkedList {
   }
   
   // gets called if list has no elements
-   private void addToEmptyList(int data) {
-     Node nodeToAdd = new Node();
+   private void addToEmptyList(E data) {
+     Node<E> nodeToAdd = new Node<E>();
      nodeToAdd.setData(data);
      this.head = nodeToAdd;
      this.tail = nodeToAdd;
    }
 
    // creates new node, sets head to point to this node
-   public void addToFront(final int data){
+   public void addToFront(final E data){
      if(isEmpty()==true) addToEmptyList(data);
      else {
-    	 Node nodeToAdd = new Node();
+    	 Node<E> nodeToAdd = new Node<E>();
     	 nodeToAdd.setData(data);
     	 this.head.setPrev(nodeToAdd);
     	 nodeToAdd.setNext(this.head);
@@ -38,10 +38,10 @@ public class LinkedList {
    }
    
    // creates new node, sets tail to point to this node
-   public void addToRear(final int data){
+   public void addToRear(final E data){
      if(isEmpty()==true) addToEmptyList(data);
      else {
-    	 Node nodeToAdd = new Node();
+    	 Node<E> nodeToAdd = new Node<E>();
     	 nodeToAdd.setData(data);
     	 this.tail.setNext(nodeToAdd);
     	 nodeToAdd.setPrev(this.tail);
@@ -51,12 +51,12 @@ public class LinkedList {
    }
    
    // inserts a new node at the index
-   public void addAtIndex(int index, final int data) {
+   public void addAtIndex(int index, final E data) {
 	   if(index <= 0) addToFront(data);
 	   else if(index >= this.size) addToRear(data);
 	   else {
-	   Node current = this.head;
-	   Node nodeToAdd = new Node();
+	   Node<E> current = this.head;
+	   Node<E> nodeToAdd = new Node<E>();
 	   nodeToAdd.setData(data);
 	   for(int i = 0;i< index; i++) {
 		   current = current.getNext();
@@ -70,13 +70,13 @@ public class LinkedList {
    }
    
    // returns data from head
-   public int getFront() {
+   public E getFront() {
 		// need to throw error if it is an empty list
 		return this.head.getData();
    }
    
    // returns data from tail
-   public int getRear() {
+   public E getRear() {
 		// need to throw error if it is an empty list
 		return this.tail.getData();
 
@@ -100,7 +100,7 @@ public class LinkedList {
 	   if(index <= 0) deleteFront();
 	   else if(index >= this.size) deleteRear();
 	   else {
-		   Node current = this.head;
+		   Node<E> current = this.head;
 		   for(int i = 0;i< index; i++) {
 			   current = current.getNext();
 		   }
@@ -112,7 +112,7 @@ public class LinkedList {
    
    
    public void printList(){
-    Node current = head;
+    Node<E> current = head;
     String output = "{ ";
     while(current != null){
       output += current.getData() + ", ";

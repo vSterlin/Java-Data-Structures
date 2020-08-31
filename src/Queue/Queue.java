@@ -1,16 +1,16 @@
 package Queue;
 import LinkedList.LinkedList;
 
-public class Queue {
-	private LinkedList queueList = new LinkedList();
-	public void enque(int data) {
+public class Queue<E> {
+	private LinkedList<E> queueList = new LinkedList<E>();
+	public void enque(E data) {
 		queueList.addToRear(data);
 	}
 	public void deque() {
 		queueList.deleteFront();
 	}
 	
-	public int peek() {
+	public E peek() {
 		return queueList.getFront();
 	}
 	public boolean isEmpty() {

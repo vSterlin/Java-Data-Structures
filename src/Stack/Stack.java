@@ -1,16 +1,16 @@
 package Stack;
 import LinkedList.LinkedList;
 
-public class Stack {
-	private LinkedList stackList = new LinkedList();
+public class Stack<E>{
+	private LinkedList<E> stackList = new LinkedList<E>();
 	
-	public void push(int data) {
+	public void push(E data) {
 		stackList.addToFront(data);
 	}
 	public void pop() {
 		stackList.deleteFront();
 	}
-	public int peek() {
+	public E peek() {
 		return stackList.getFront();
 	}
 	public boolean isEmpty() {

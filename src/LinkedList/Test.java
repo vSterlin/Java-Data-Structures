@@ -5,7 +5,7 @@ public class Test {
 	public static void main(String[] args) {
 
 	
-		LinkedList l = new LinkedList();
+		LinkedList<Integer> l = new LinkedList<Integer>();
 		// outputs true
 		System.out.println(l.isEmpty());
 		l.addToRear(1);

@@ -1,31 +1,31 @@
 package LinkedList;
 
-public class Node {
-  private int data;
-  private Node next = null;
-  private Node prev = null;
+public class Node<E> {
+  private E data;
+  private Node<E> next = null;
+  private Node<E> prev = null;
 
-  public int getData() {
+  public E getData() {
     return this.data;
   }
 
-  public void setData(int data) {
+  public void setData(E data) {
     this.data = data;
   }
 
-  public Node getNext() {
+  public Node<E> getNext() {
     return this.next;
   }
 
-  public void setNext(Node next) {
+  public void setNext(Node<E> next) {
     this.next = next;
   }
 
-  public Node getPrev() {
+  public Node<E> getPrev() {
     return this.prev;
   }
 
-  public void setPrev(Node prev) {
+  public void setPrev(Node<E> prev) {
     this.prev = prev;
   }
   
