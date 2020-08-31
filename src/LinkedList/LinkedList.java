@@ -25,7 +25,7 @@ public class LinkedList {
    }
 
    // creates new node, sets head to point to this node
-   void addToFront(final int data){
+   public void addToFront(final int data){
      if(isEmpty()==true) addToEmptyList(data);
      else {
     	 Node nodeToAdd = new Node();
@@ -38,7 +38,7 @@ public class LinkedList {
    }
    
    // creates new node, sets tail to point to this node
-   void addToRear(final int data){
+   public void addToRear(final int data){
      if(isEmpty()==true) addToEmptyList(data);
      else {
     	 Node nodeToAdd = new Node();
@@ -51,7 +51,7 @@ public class LinkedList {
    }
    
    // inserts a new node at the index
-   void addAtIndex(int index, final int data) {
+   public void addAtIndex(int index, final int data) {
 	   if(index <= 0) addToFront(data);
 	   else if(index >= this.size) addToRear(data);
 	   else {
@@ -69,22 +69,34 @@ public class LinkedList {
 	   }
    }
    
+   // returns data from head
+   public int getFront() {
+		// need to throw error if it is an empty list
+		return this.head.getData();
+   }
+   
+   // returns data from tail
+   public int getRear() {
+		// need to throw error if it is an empty list
+		return this.tail.getData();
+
+   }
    // deletes first item
-   void deleteFront() {
+   public void deleteFront() {
 	   this.head = this.head.getNext();
 	   this.head.setPrev(null);
 	   this.size--;
    }
    
    //deletes last item
-   void deleteRear() {
+   public void deleteRear() {
 	   this.tail = this.tail.getPrev();
 	   this.tail.setNext(null);
 	   this.size--;
    }
    
    // deletes a node at index
-   void deleteAtIndex(int index) {
+   public void deleteAtIndex(int index) {
 	   if(index <= 0) deleteFront();
 	   else if(index >= this.size) deleteRear();
 	   else {
@@ -99,7 +111,7 @@ public class LinkedList {
    }
    
    
-  void printList(){
+   public void printList(){
     Node current = head;
     String output = "{ ";
     while(current != null){
