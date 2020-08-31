@@ -3,6 +3,7 @@ package BinarySearchTree;
 public class BinarySearchTree {
   
 	private Node root = null;
+	private int size = 0;
 	
 	public boolean isEmpty() {
 		if(root == null) return true;
@@ -16,22 +17,48 @@ public class BinarySearchTree {
 			this.root.setData(data);
 		}
 		else {
+			Node parent = null;
 			Node current = this.root;
-			// go left
 			while(current != null) {
+				
+				// go left
 				if(data < current.getData()) {
+					parent = current;
 					current = current.getLeft();
-					
-					System.out.println("Went left");
 				}
+				
+				// go right
 				else {
+					parent = current;
 					current = current.getRight();
-					System.out.println("Went right");
 				}
 				
 			}
-			current = nodeToInsert;
+			if(data < parent.getData()) parent.setLeft(nodeToInsert);
+			
+			else parent.setRight(nodeToInsert);
 
+		}
+		this.size++;
+	}
+	
+	public int getSize() {
+		return this.size;
+	}
+	
+	public void printLeft() {
+		Node current = this.root;
+		while(current != null) {
+			System.out.println(current.getData());
+			current = current.getLeft();
+		}
+	}
+	
+	public void printRight() {
+		Node current = this.root;
+		while(current != null) {
+			System.out.println(current.getData());
+			current = current.getRight();
 		}
 	}
 }
