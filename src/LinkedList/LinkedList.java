@@ -73,12 +73,14 @@ public class LinkedList {
    void deleteFront() {
 	   this.head = this.head.getNext();
 	   this.head.setPrev(null);
+	   this.size--;
    }
    
    //deletes last item
    void deleteRear() {
 	   this.tail = this.tail.getPrev();
 	   this.tail.setNext(null);
+	   this.size--;
    }
    
    // deletes a node at index
@@ -92,6 +94,7 @@ public class LinkedList {
 		   }
 		   current.getPrev().setNext(current.getNext());
 		   current.getNext().setPrev(current.getPrev());
+		   this.size--;
 	   }
    }
    
