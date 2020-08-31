@@ -65,7 +65,7 @@ public class LinkedList {
 	   nodeToAdd.setNext(current);
 	   current.getPrev().setNext(nodeToAdd);
 	   current.setPrev(nodeToAdd);
-
+	   size++;
 	   }
    }
    
